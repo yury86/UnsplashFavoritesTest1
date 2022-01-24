@@ -13,8 +13,9 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
            let width: Int
            let height: Int
            let color: String
+        let regular: String
     }
-    //let images = Bundle.main.decode([ImageV].self, from: "https://api.unsplash.com/photos/?client_id=bGd_Znl1q8m51QpF8w7-jzz6svspEKKwLK3ucpC6c-o&order_by=ORDER&per_page=30")
+    //let images = Bundle.main.decode([ImageV].self, from: "https://api.unsplash.com/photos/?client_id=(ACCESS_KEY)&order_by=ORDER&per_page=30")
     let tabTwo = UIViewController()
     /*
     lazy var myCollectionView: UICollectionView = {
@@ -56,7 +57,7 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
         let tabOneBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
         
         tabOne.tabBarItem = tabOneBarItem
-    /*let url1 = "https://api.unsplash.com/photos/?client_id=bGd_Znl1q8m51QpF8w7-jzz6svspEKKwLK3ucpC6c-o&order_by=ORDER&per_page=30"
+    /*let url1 = "https://api.unsplash.com/photos/?client_id=ACCESS_KEY&order_by=ORDER&per_page=30"
         URLSession.shared.dataTask(with: url1) { data, response, error in
            if let data = data {
               if let jsonString = String(data: data, encoding: .utf8) {
@@ -106,7 +107,7 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
     }*/
     
     func fetchImages() {
-        let address = "https://api.unsplash.com/photos/?client_id=bGd_Znl1q8m51QpF8w7-jzz6svspEKKwLK3ucpC6c-o&order_by=ORDER&per_page=30"
+        let address = "https://api.unsplash.com/photos/?client_id=ACCESS_KEY&order_by=ORDER&per_page=30"
         if let url = URL(string: address) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let error = error {
